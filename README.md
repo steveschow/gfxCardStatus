@@ -1,34 +1,33 @@
-# gfxCardStatus
-by Cody Krieger
+# gfxCardStatus.i
 
-gfxCardStatus is an open-source menu bar application for OS X that allows users
-of dual GPU MacBook Pros to monitor the status of, and switch between said GPUs.
+This is a fork from Cody Krieger's gfxCardStatus project: https://github.com/codykrieger/gfxCardStatus
+
+The purpose of this project is to introduce a few changes that improve the way gfxCardStatus handles Integrated-Only mode.  This is of particular interest to MacBookPro users that have the dreaded kernel panic problem from the nVidia GPU.  
+
+Currently gfxCardStatus v2.3 is unable to maintain Integrated-Only mode because OSX will sometimes force the machine back to Discrete mode when exiting certain apps.  Unfortunately OSX is not aware that gfxCardStatus has set the "ONLY" flag (rather then dynamic switching), and so the system state will be changed to Discrete-Only, which is not usually desirable.
+
+This version of gfxCardStatus will contain code changes that make it possible to maintain Integrated GPU as much as possible.  Unfortunately it will not be possible to have 100% Integrated Usage because OSX does force to Discrete mode when exiting certain apps, which cannot be prevented.  However, this version of gfxCardStatus will minimize the amount of time that the Discrete GPU is used by switching back to Integrated mode as soon as possible.   And it will avoid getting trapped in Discrete-Only mode by the logical error explained above.
+
+The initial idea for this project was created by an older fork by highandfew (https://github.com/highandfew/gfxCardStatus) some years ago that has not been pulled into the main project, nor has it been maintained ever since.  This project will initially have highandfew's change integrated with the more recent code from gfxCardStatus, but will also provide a few more benefits, which shall be outlined here as they are completed.  
+
+An effort will be made to keep this project up to date with the main gfxCardStatus project it has been forked from, with regards to other bug fixes and enhancements which may come forth in the future.
 
 ## Building from source
 
-In order to successfully build gfxCardStatus, you've got to have its submodules
-(namely ReactiveCocoa) cheked out.
+Please see build instructions from: https://github.com/codykrieger/gfxCardStatus
+Note, the project currently has some build issues which I will try to correct here in this fork.  If you have trouble building, then follow this workaround: 
+  - open the subproject called <code>Pods</code> in Xcode, and build it, it builds some libraries
+  - copy the libraries into the LIB path of the parent gfxCardStatus project
+  - build gfxCardStatus in Xcode
 
-Either:
+I hope to have this problem corrected in this fork and hopefully can get pulled into the main project too, and I also hope to have binaries released on this repo, so stay tuned.
 
-```
-git clone --recursive git://github.com/codykrieger/gfxCardStatus.git
-```
-
-Or, if you've already got the repo cloned:
-
-```
-cd /path/to/gfxCardStatus
-git submodule update --init --recursive
-```
-
-Then just open up the Xcode project, build it, and you're ready to go.
 
 ## License
 
 Licensed under the New BSD License.
 
-Copyright (c) 2010-2012, Cody Krieger
+Copyright (c) 2010-2012, Cody Krieger and other contributors
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
