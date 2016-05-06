@@ -65,6 +65,17 @@ static void _displayReconfigurationCallback(CGDirectDisplayID display, CGDisplay
             
             GTMLoggerInfo(@"Notification: GPU changed. Integrated? %d", isUsingIntegrated);
             
+            // For users that want integrated-only mode, there are times when
+				// OSX will switch to discrete mode while some apps are exiting,
+				// without changing dyanmic flag to on.
+				// this code will catch those and switch back to integrated mode
+				// TODO: consider safer code that temporarily switches to dynamic
+				//       mode and waits for OSX to switch to integrated before 
+				//       turning dynamic mode back off again
+            if (!isUsingIntegrated && ([GSMux currentGSSwitcherMode]==GSSwitcherModeForceIntegrated)) {
+                [GSMux setMode:GSSwitcherModeForceIntegrated];
+            }
+
             GSGPUType activeType = (isUsingIntegrated ? GSGPUTypeIntegrated : GSGPUTypeDiscrete);
             [_delegate GPUDidChangeTo:activeType];
         });

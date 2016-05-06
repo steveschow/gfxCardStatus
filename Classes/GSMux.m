@@ -239,6 +239,13 @@ static void dumpState(io_connect_t connect)
 
 @implementation GSMux
 
+static GSSwitcherMode currentGSSwitcherMode;
+
++(GSSwitcherMode)currentGSSwitcherMode
+{
+    return currentGSSwitcherMode;
+}
+
 #pragma mark - GSMux API
 #pragma mark Initialization/destruction
 
@@ -304,6 +311,9 @@ static void dumpState(io_connect_t connect)
     if (_switcherConnect == IO_OBJECT_NULL)
         return NO;
     
+    // Set current GSSwitcher mode
+    currentGSSwitcherMode = mode;
+
     switch (mode) {
         case GSSwitcherModeForceIntegrated:
         case GSSwitcherModeForceDiscrete:
