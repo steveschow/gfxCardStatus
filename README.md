@@ -12,6 +12,9 @@ The initial idea for this project was created by an older fork by highandfew (ht
 
 An effort will be made to keep this project up to date with the main gfxCardStatus project it has been forked from, with regards to other bug fixes and enhancements which may come forth in the future.
 
+## Binary Releases
+Binary releases of this fork can probably be found here: https://github.com/steveschow/gfxCardStatus/releases
+
 ## Building from source
 
 Please see build instructions from: https://github.com/codykrieger/gfxCardStatus
