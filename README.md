@@ -1,5 +1,7 @@
 # gfxCardStatus.i
 
+NOTE - Not currently working on Sierra, not reccomended to use
+
 This is a fork from Cody Krieger's gfxCardStatus project: https://github.com/codykrieger/gfxCardStatus
 
 The purpose of this project is to introduce a few changes that improve the way gfxCardStatus handles Integrated-Only mode.  This is of particular interest to MacBookPro users that have the dreaded kernel panic problem from the nVidia GPU.  
