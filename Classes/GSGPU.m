@@ -74,6 +74,7 @@ static void _displayReconfigurationCallback(CGDirectDisplayID display, CGDisplay
 				//       turning dynamic mode back off again
             if (!isUsingIntegrated && ([GSMux currentGSSwitcherMode]==GSSwitcherModeForceIntegrated)) {
                 [GSMux setMode:GSSwitcherModeForceIntegrated];
+                isUsingIntegrated = YES;
             }
 
             GSGPUType activeType = (isUsingIntegrated ? GSGPUTypeIntegrated : GSGPUTypeDiscrete);
