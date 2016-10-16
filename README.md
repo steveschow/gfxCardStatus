@@ -15,6 +15,15 @@ An effort will be made to keep this project up to date with the main gfxCardStat
 ## Binary Releases
 Binary releases of this fork can probably be found here: https://github.com/steveschow/gfxCardStatus/releases
 
+## Homebrew cask
+
+The fork can be installed via homebrew:
+
+```
+brew cask uninstall gfxcardstatus # if installed via homebrew 
+brew cask install steveschow-gfxcardstatus
+```
+
 ## Building from source
 
 Please see build instructions from: https://github.com/codykrieger/gfxCardStatus
