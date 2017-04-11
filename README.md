@@ -12,6 +12,9 @@ The initial idea for this project was created by an older fork by highandfew (ht
 
 An effort will be made to keep this project up to date with the main gfxCardStatus project it has been forked from, with regards to other bug fixes and enhancements which may come forth in the future.
 
+## Usage
+Run the app, the menubar will have an icon added that should look like either an "i' or a "n".  That is the menu for gfxCardStatus.  if you want integrated-only mode, then select that from the menu.  For the time being, this will need to be done every time you restart the app, it does not remember the setting between invocations.  The icon in the menubar will tell you whether the MBP is currently in integrated or discrete mode.
+
 ## Binary Releases
 Binary releases of this fork can probably be found here: https://github.com/steveschow/gfxCardStatus/releases
 
