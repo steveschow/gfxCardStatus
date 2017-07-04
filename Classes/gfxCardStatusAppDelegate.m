@@ -99,6 +99,18 @@
     // Check for updates if the user has them enabled.
     if ([_prefs shouldCheckForUpdatesOnStartup])
         [updater checkForUpdatesInBackground];
+    
+    // for now init to integrated-only mode.  
+    // Later on do this only if prefs were set for it
+    
+    NSArray *taskList = [GSProcess getTaskList];
+    if (taskList.count > 0) {
+        GTMLoggerInfo(@"Not setting Integrated Only because of dependencies list items: %@", taskList);
+    }
+    else {
+        GTMLoggerInfo(@"Setting Integrated Only...");
+        [GSMux setMode:GSSwitcherModeForceIntegrated];
+    }
 }
 
 #pragma mark - Termination Notifications
