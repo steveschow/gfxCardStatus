@@ -1,8 +1,32 @@
 # gfxCardStatus.i
 
+If you are looking for a solution to GPU kernal panics on your Apple MacBookPro, please read the following.
+
+## LATEST NEWS
+_I have discontinued use of __gfxCardStatus__ to solve the MBP kernel panic problem as the issue is better solved on 2010 models by the following hack:_
+
+   https://github.com/julian-poidevin/MBPMid2010_GPUFix.
+   
+_For MBP models with the AMD graphics card I reccomend the following hack:_
+
+   https://apple.stackexchange.com/questions/166876/macbook-pro-how-to-disable-discrete-gpu-permanently-from-efi/285896#285896
+
+   https://forums.macrumors.com/threads/force-2011-macbook-pro-8-2-with-failed-amd-gpu-to-always-use-intel-integrated-gpu-efi-variable-fix.2037591/page-5#post-24511780
+
+_In the future I will also be replacing the known disfunctional capacitor on this model which will permanentaly solve the problem.  More information can be found here:_
+
+   https://forums.macrumors.com/threads/gpu-kernel-panic-in-mid-2010-whats-the-best-fix.1890097/#post-23317162
+
+   https://www.youtube.com/watch?v=DzcgT_fiVTA
+
+_Due to the above fixes being a better solution for me, I will not likely be doing any further development on this fork of gfxCardStatus.  Others are welcome to continue with it._
+
+## Project
 This is a fork from Cody Krieger's gfxCardStatus project: https://github.com/codykrieger/gfxCardStatus
 
 The purpose of this project is to introduce a few changes that improve the way gfxCardStatus handles Integrated-Only mode.  This is of particular interest to MacBookPro users that have the dreaded kernel panic problem from the nVidia GPU.  
+
+ 
 
 Currently gfxCardStatus v2.3 is unable to maintain Integrated-Only mode because OSX will sometimes force the machine back to Discrete mode when exiting certain apps.  Unfortunately OSX is not aware that gfxCardStatus has set the "ONLY" flag (rather then dynamic switching), and so the system state will be changed to Discrete-Only, which is not usually desirable.
 
