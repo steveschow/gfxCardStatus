@@ -3,11 +3,11 @@
 If you are looking for a solution to GPU kernal panics on your Apple MacBookPro, please read the following.
 
 ## LATEST NEWS
-_I have discontinued use of __gfxCardStatus__ to solve the MBP kernel panic problem as the issue is better solved on 2010 models by the following hack:_
+_I have discontinued use of __gfxCardStatus__ to solve the MBP kernel panic problem as the issue is better solved on 2010 models with the nVidia GPU by the following hack:_
 
    https://github.com/julian-poidevin/MBPMid2010_GPUFix.
    
-_For MBP models with the AMD graphics card I reccomend the following hack:_
+_For other MBP models with the AMD graphics card I reccomend the following hack:_
 
    https://apple.stackexchange.com/questions/166876/macbook-pro-how-to-disable-discrete-gpu-permanently-from-efi/285896#285896
 
