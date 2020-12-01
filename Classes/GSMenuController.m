@@ -327,7 +327,7 @@
                                               weight:0
                                                 size:fontSize];
     
-        // Quick fix for menubar icon offset in macOS Big Sur
+    // Quick fix for menubar icon offset in macOS Big Sur
     double baselineOffset = 2.0;
     NSProcessInfo* processInfo = [NSProcessInfo processInfo];
 
